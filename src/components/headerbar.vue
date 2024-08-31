@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar color="teal-darken-4" app>
+  <v-app-bar color="purple darken-2" app>
     <!-- ナビゲーションアイコン -->
     <v-app-bar-nav-icon @click="toggleDrawer"></v-app-bar-nav-icon>
 
@@ -25,6 +25,7 @@
     v-model="drawer"
     :location="$vuetify.display.mobile ? 'bottom' : undefined"
     temporary
+    color="purple darken-2"
   >
     <v-list :items="items" @click:select="selected"></v-list>
   </v-navigation-drawer>
@@ -35,12 +36,15 @@ import { ref } from "vue";
 import { defineEmits } from "vue";
 const emit = defineEmits(["movepage"]);
 
-const title = ref("My Site");
+const title = ref("Bona");
 const drawer = ref(false);
 
 const items = ref([
-  { title: "Home", value: 1 },
+  { title: "Kanri", value: 1 },
   { title: "My Wishlist", value: 2 },
+  { title: "Register Spec", value: 3 },
+  { title: "Chart", value: 4 },
+  { title: "Home", value: 5 }
 ]);
 
 const toggleDrawer = () => {
